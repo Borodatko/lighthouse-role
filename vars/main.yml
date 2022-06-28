@@ -1,0 +1,5 @@
+---
+# vars file for lighthouse-role
+git_url: https://github.com/VKCOM/lighthouse.git
+www_path: /var/www/lighthouse
+config_path: /etc/nginx/conf.d/default.conf

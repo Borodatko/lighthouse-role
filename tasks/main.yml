@@ -1,0 +1,24 @@
+---
+# tasks file for lighthouse-role
+- include_tasks: yum.yml
+  tags: [always]
+
+- name: Lighthouse - Create directory
+  become: true
+  ansible.builtin.file:
+    path: "{{ www_path }}"
+    state: directory
+    mode: '0755'
+    owner: nginx
+    group: nginx
+  tags: lighthouse
+
+- name: Lighthouse - clone repo
+  become: true
+  ansible.builtin.git:
+    repo: "{{ git_url }}"
+    dest: "{{ www_path }}"
+  tags: lighthouse
+
+- include_tasks: nginx.yml
+  tags: [always]
