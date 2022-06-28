@@ -22,7 +22,7 @@ An example of using role:
 ```yaml
 - hosts: all
   roles:
-    - lighthouse-role
+    - lighthouse
 ```
 
 License
